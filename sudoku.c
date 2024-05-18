@@ -144,7 +144,7 @@ int is_final(Node* n){
             {
                if (n->sudo[i][j] == 0)
                {
-                  printf("%i",n->sudo[i][j]);
+                  return 0;
                }
             }
       }
