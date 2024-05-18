@@ -103,8 +103,9 @@ int is_valid(Node* n)
 {
    for (int i = 0 ; i < 3 ; i++)
    {
-      if (!EstaRepetidoF(n,i))
+      if (EstaRepetidoF(n,i))
       {
+         printf("%i",n->sudo[i][0]);
          return 1;
       }
    }
