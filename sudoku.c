@@ -105,7 +105,7 @@ int is_valid(Node* n)
    {
       if (EstaRepetidoF(n,i))
       {
-         printf("%i",n->sudo[i][0]);
+         printf("%i\n",n->sudo[i][0]);
          return 1;
       }
    }
