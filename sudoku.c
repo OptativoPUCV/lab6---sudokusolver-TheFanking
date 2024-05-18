@@ -76,15 +76,20 @@ bool EstaRepetidoC(Node* aux,int col)
 
 bool EstaRepetidoS(Node * aux , int filaI, int colI)
 {
-   for  (int i = filaI ; i < filaI+3 ; i++)
+   for  (int i = filaI ; i < (filaI+3); i++)
       {
-         for  (int j = colI ; j < colI+3 ; j++)
+         for  (int j = colI ; j < (colI+3) ; j++)
             {
-               if (!EstaRepetidoF(aux,i) || 
-                   !EstaRepetidoC(aux,j))
-               {
-                  return false;
-               }
+               for (int k = filaI ; (filaI+3) ; k++)
+                  {
+                     for (int l = colI; (colI+3) ; l++)
+                        {
+                           if (aux->sudo[i][j] == aux->sudo[k][l])
+                           {
+                              return false;
+                           }
+                        }
+                  }
             }
       }
    return true;
@@ -105,6 +110,17 @@ int is_valid(Node* n)
          {
             return 0;
          }
+      }
+
+   for (int i = 0 ; i < 9 ; i+=3)
+      {
+         for (int j = 0 ; j < 9 ; j+=3) 
+            {
+               if (EstaRepetidoS(n,i,j))
+               {
+                  return 0;
+               }
+            }
       }
    return 1;
 }
