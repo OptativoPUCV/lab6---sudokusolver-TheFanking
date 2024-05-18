@@ -44,20 +44,20 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int EstaRepetidoF(Node* aux ,int fila)
-{
-    for (int i = 0 ; i < 8 ; i++)
-       {
-          for (int j = i + 1 ; j < 9 ; j++)
-             {
-                if (aux->sudo[fila][i] == aux->sudo[fila][j])
-                {
-                   return 1;
-                }
-             }
-       }
-   return 0;
+int EstaRepetidoF(Node* aux, int fila) {
+    bool visto[10] = {false}; // Inicializa un arreglo booleano para registrar los números vistos
+    for (int i = 0; i < 9; i++) {
+        int num = aux->sudo[fila][i];
+        if (num != 0) { // Ignora los espacios en blanco
+            if (visto[num]) {
+                return 1; // Si el número ya ha sido visto, hay una repetición
+            }
+            visto[num] = true; // Marca el número como visto
+        }
+    }
+    return 0; // No hay repetición en la fila
 }
+
 
 int EstaRepetidoC(Node* aux,int col)
 {
