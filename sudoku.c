@@ -101,11 +101,12 @@ int EstaRepetidoS(Node * aux , int filaI, int colI)
 
 int is_valid(Node* n)
 {
+   int flag = 0;
    for (int i = 0 ; i < 9 ; i++)
    {
       if (EstaRepetidoF(n,i) || EstaRepetidoC(n,i))
       {
-         return 1;
+         flag = 1;
       }
    }
 
@@ -115,9 +116,13 @@ int is_valid(Node* n)
       {
          if (EstaRepetidoS(n,i,j))
          {
-            return 1;
+            flag = 1;
          }
       }
+   }
+   if (flag == 0)
+   {
+      return 1;
    }
    return 0;
 }
