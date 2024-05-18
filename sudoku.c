@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
+#include <stdbool.h>
 
 
 typedef struct{
@@ -43,9 +44,69 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
+bool EstaRepetidoF(Node* aux ,int fila)
+{
+    for (int i = 0 ; i < 8 ; i++)
+       {
+          for (int j = i + 1 ; j < 9 ; j++)
+             {
+                if (aux->sudo[fila][i] == aux->sudo[fila][j])
+                {
+                   return false;
+                }
+             }
+       }
+   return true;
+}
 
-    return 1;
+bool EstaRepetidoC(Node* aux,int col)
+{
+   for (int i = 0 ; i < 8 ; i++)
+      {
+         for (int j = i + 1 ; j < 8 ; j++)
+            {
+               if (aux->[i][col] == aux->sudo[j][col])
+               {
+                  return false;
+               }
+            }
+      }
+   return true;
+}
+
+bool EstaRepetidoS(Node * aux , int filaI, int colI)
+{
+   for  (int i = filaI ; i < filaI+3 ; i++)
+      {
+         for  (int j = colI ; j < colI+3 ; j++)
+            {
+               if (!EstaRepetidoF(aux,i) || 
+                   !EstaRepetidoC(aux,j))
+               {
+                  return false;
+               }
+            }
+      }
+   return true;
+}
+
+int is_valid(Node* n)
+{
+   for (int i = 0 ; i < 9 ; i++)
+      {
+         if (!EstaRepetidoF(n,i))
+         {
+            return 0;
+         }
+      }
+   for (int i = 0 ; i < 9 ; i++)
+      {
+         if (!EstaRepetidoC(n,i))
+         {
+            return 0;
+         }
+      }
+   return 1;
 }
 
 
