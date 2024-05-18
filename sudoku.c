@@ -48,7 +48,7 @@ bool EstaRepetidoF(Node* aux ,int fila)
 {
     for (int i = 0 ; i < 9 ; i++)
        {
-          for (int j = i + 1 ; j < 10 ; j++)
+          for (int j = i + 1 ; j < 9 ; j++)
              {
                 if (aux->sudo[fila][i] == aux->sudo[fila][j])
                 {
@@ -63,7 +63,7 @@ bool EstaRepetidoC(Node* aux,int col)
 {
    for (int i = 0 ; i < 9 ; i++)
       {
-         for (int j = i + 1 ; j < 10 ; j++)
+         for (int j = i + 1 ; j < 9 ; j++)
             {
                if (aux->sudo[i][col] == aux->sudo[j][col])
                {
