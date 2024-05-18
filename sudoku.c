@@ -46,11 +46,11 @@ void print_node(Node* n){
 
 int EstaRepetidoF(Node* aux ,int fila)
 {
-    for (int i = 0 ; i < 2 ; i++)
+    for (int i = 0 ; i < 8 ; i++)
        {
-          for (int j = i + 1 ; j < 3 ; j++)
+          for (int j = 1 ; j <= 9 ; j++)
              {
-                if (aux->sudo[fila][i] == aux->sudo[fila][j])
+                if (aux->sudo[fila][i] == j)
                 {
                    return 1;
                 }
