@@ -104,9 +104,10 @@ int is_valid(Node* n)
    int flag = 0;
    for (int i = 0 ; i < 9 ; i++)
    {
-      if (EstaRepetidoF(n,i))
+      if (EstaRepetidoF(n,i) || EstaRepetidoC(n,i))
       {
          flag = 1;
+         break;
       }
    }
 
