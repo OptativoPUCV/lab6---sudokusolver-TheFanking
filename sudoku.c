@@ -124,7 +124,10 @@ int is_valid(Node* n)
    {
       return 1;
    }
-   return 0;
+   else
+   {
+      return 0;
+   }
 }
 
 
