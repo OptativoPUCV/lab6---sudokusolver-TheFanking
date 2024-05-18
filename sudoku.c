@@ -101,36 +101,16 @@ int EstaRepetidoS(Node * aux , int filaI, int colI)
 
 int is_valid(Node* n)
 {
-   int flag = 0;
    for (int i = 0 ; i < 9 ; i++)
    {
-      if (EstaRepetidoF(n,i) || EstaRepetidoC(n,i))
+      if (EstaRepetidoF(n,i))
       {
-         flag = 1;
-         break;
+         return 1;
       }
    }
-
-   for (int i = 0 ; i < 9 ; i+=3)
-   {
-      for (int j = 0 ; j < 9 ; j+=3) 
-      {
-         if (EstaRepetidoS(n,i,j))
-         {
-            flag = 1;
-            break;
-         }
-      }
-   }
-   if (flag == 0)
-   {
-      return 1;
-   }
-   else
-   {
-      return 0;
-   }
-}
+   return 0;
+}   
+  
 
 
 List* get_adj_nodes(Node* n){
