@@ -103,9 +103,9 @@ int is_valid(Node* n)
 {
    for (int i = 0 ; i < 9 ; i++)
    {
-      if (!EstaRepetidoF(n,i) || !EstaRepetidoC(n,i))
+      if (EstaRepetidoF(n,i) || EstaRepetidoC(n,i))
       {
-         return 0;
+         return 1;
       }
    }
 
@@ -113,13 +113,13 @@ int is_valid(Node* n)
    {
       for (int j = 0 ; j < 9 ; j+=3) 
       {
-         if (!EstaRepetidoS(n,i,j))
+         if (EstaRepetidoS(n,i,j))
          {
-            return 0;
+            return 1;
          }
       }
    }
-   return 1;
+   return 0;
 }
 
 
