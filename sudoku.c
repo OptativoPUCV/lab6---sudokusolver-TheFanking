@@ -105,10 +105,10 @@ int is_valid(Node* n)
    {
       if (!EstaRepetidoF(n,i))
       {
-         return 0;
+         return 1;
       }
    }
-   return 1;
+   return 0;
 }   
   
 
