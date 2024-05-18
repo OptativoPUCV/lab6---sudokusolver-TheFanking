@@ -50,7 +50,7 @@ int EstaRepetidoF(Node* aux ,int fila)
        {
           for (int j = 1 ; j <= 9 ; j++)
              {
-                if (aux->sudo[fila][i] == j)
+                if (aux->sudo[fila][i] == aux->sudo[fila][j])
                 {
                    return 1;
                 }
@@ -144,6 +144,7 @@ int is_final(Node* n){
             {
                if (n->sudo[i][j] == 0)
                {
+                  printf("%i",n->sudo[i][j]);
                   return 0;
                }
             }
