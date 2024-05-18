@@ -22,3 +22,37 @@ Sat 18 May 2024 02:08:53 AM UTC:
  tests:  0|5
 total_score: 0/70
 891fc44
+Sat 18 May 2024 02:09:52 AM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:61:39: error: expected ‘)’ before ‘valor’
+   61 |                   Node *valor = copy(n
+      |                                     ~ ^
+      |                                       )
+   62 |                   valor++;
+      |                   ~~~~~                
+sudoku.c:64:16: error: expected ‘,’ or ‘;’ before ‘}’ token
+   64 |                }
+      |                ^
+sudoku.c:61:25: error: unused variable ‘valor’ [-Werror=unused-variable]
+   61 |                   Node *valor = copy(n
+      |                         ^~~~~
+test.c:245:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:262:1: error: expected declaration or statement at end of input
+  262 | }
+      | ^
+test.c:263: error: control reaches end of non-void function [-Werror=return-type]
+At top level:
+test.c:245:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+dd8356b
