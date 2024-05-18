@@ -44,7 +44,7 @@ void print_node(Node* n){
     printf("\n");
 }
 
-bool EstaRepetidoF(Node* aux ,int fila)
+int EstaRepetidoF(Node* aux ,int fila)
 {
     for (int i = 0 ; i < 9 ; i++)
        {
@@ -52,14 +52,14 @@ bool EstaRepetidoF(Node* aux ,int fila)
              {
                 if (aux->sudo[fila][i] == aux->sudo[fila][j])
                 {
-                   return false;
+                   return 0;
                 }
              }
        }
-   return true;
+   return 1;
 }
 
-bool EstaRepetidoC(Node* aux,int col)
+int EstaRepetidoC(Node* aux,int col)
 {
    for (int i = 0 ; i < 9 ; i++)
       {
@@ -67,14 +67,14 @@ bool EstaRepetidoC(Node* aux,int col)
             {
                if (aux->sudo[i][col] == aux->sudo[j][col])
                {
-                  return false;
+                  return 0;
                }
             }
       }
-   return true;
+   return 1;
 }
 
-bool EstaRepetidoS(Node * aux , int filaI, int colI)
+int EstaRepetidoS(Node * aux , int filaI, int colI)
 {
    for  (int i = filaI ; i < (filaI+3); i++)
       {
@@ -89,14 +89,14 @@ bool EstaRepetidoS(Node * aux , int filaI, int colI)
                               if (aux->sudo[i][j] == 
                                  aux->sudo[k][l])
                               {
-                                 return false;
+                                 return 0;
                               }
                            }
                         }
                   }
             }
       }
-   return true;
+   return 1;
 }
 
 int is_valid(Node* n)
