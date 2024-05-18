@@ -101,13 +101,20 @@ int EstaRepetidoS(Node * aux , int filaI, int colI)
 
 int is_valid(Node* n)
 {
-   for (int i = 0 ; i < 3 ; i++)
+   for (int i = 0 ; i < 9 ; i++)
    {
-      if (EstaRepetidoF(n,i))
-      {
-         printf(" %i",n->sudo[i][0]);
-         return 1;
-      }
+      int num = {0};
+      for (int j = 0 ; j < 9 ; j++)
+         {
+            if (n->sudo[i][j] != 0 && num[n->sudo[i][j]] == 1)
+            {
+               return 0;
+            }
+            else
+            {
+               num[n->sudo[i][j]] = 1;
+            }
+         }
    }
    return 0;
 }   

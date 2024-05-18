@@ -438,3 +438,20 @@ Sat 18 May 2024 11:40:37 PM UTC:
  tests:  3|3
 total_score: 25/70
 a6a62d8
+Sat 18 May 2024 11:56:29 PM UTC: 
+ sudoku.c | 15 +++++++++++----
+ 1 file changed, 11 insertions(+), 4 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:109:42: error: subscripted value is neither array nor pointer nor vector
+  109 |             if (n->sudo[i][j] != 0 && num[n->sudo[i][j]] == 1)
+      |                                          ^
+sudoku.c:115:19: error: subscripted value is neither array nor pointer nor vector
+  115 |                num[n->sudo[i][j]] = 1;
+      |                   ^
+sudoku.c:106:11: error: variable ‘num’ set but not used [-Werror=unused-but-set-variable]
+  106 |       int num = {0};
+      |           ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+f831bc4
