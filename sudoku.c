@@ -80,9 +80,9 @@ bool EstaRepetidoS(Node * aux , int filaI, int colI)
       {
          for  (int j = colI ; j < (colI+3) ; j++)
             {
-               for (int k = filaI ; (filaI+3) ; k++)
+               for (int k = filaI ; k < (filaI+3) ; k++)
                   {
-                     for (int l = colI; (colI+3) ; l++)
+                     for (int l = colI; l < (colI+3) ; l++)
                         {
                            if (aux->sudo[i][j] == aux->sudo[k][l]
                                && (i!=k || j!=l))
