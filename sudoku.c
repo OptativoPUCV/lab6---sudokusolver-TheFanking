@@ -108,7 +108,6 @@ int is_valid(Node* n)
             return 0;
          }
       }
-   return 1;
    for (int i = 0 ; i < 9 ; i++)
       {
          if (!EstaRepetidoC(n,i))
