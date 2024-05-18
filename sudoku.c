@@ -65,7 +65,7 @@ bool EstaRepetidoC(Node* aux,int col)
       {
          for (int j = i + 1 ; j < 8 ; j++)
             {
-               if (aux->[i][col] == aux->sudo[j][col])
+               if (aux->sudo[i][col] == aux->sudo[j][col])
                {
                   return false;
                }
