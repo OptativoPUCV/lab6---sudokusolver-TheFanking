@@ -94,14 +94,14 @@ int is_valid(Node* n)
 {
    for (int i = 0 ; i < 9 ; i++)
       {
-         if (!EstaRepetidoF(n,i))
+         if (EstaRepetidoF(n,i))
          {
             return 0;
          }
       }
    for (int i = 0 ; i < 9 ; i++)
       {
-         if (!EstaRepetidoC(n,i))
+         if (EstaRepetidoC(n,i))
          {
             return 0;
          }
