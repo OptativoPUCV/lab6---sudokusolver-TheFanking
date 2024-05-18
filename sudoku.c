@@ -105,7 +105,7 @@ int is_valid(Node* n)
    {
       if (!EstaRepetidoF(n,i) || !EstaRepetidoC(n,i))
       {
-         return 0;
+         return 1;
       }
    }
 
@@ -115,11 +115,11 @@ int is_valid(Node* n)
       {
          if (!EstaRepetidoS(n,i,j))
          {
-            return 0;
+            return 1;
          }
       }
    }
-   return 1;
+   return 0;
 }
 
 
