@@ -59,8 +59,8 @@ List* get_adj_nodes(Node* n){
                {
                   
                   Node *valor = copy(n);
-                  valor++;
                   pushBack(list,valor);   
+                  valor++;
                }
             }
       }
