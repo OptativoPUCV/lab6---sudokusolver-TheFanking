@@ -50,13 +50,13 @@ int EstaRepetidoF(Node* aux ,int fila)
        {
           for (int j = i + 1 ; j < 9 ; j++)
              {
-                if (aux->sudo[fila][i] == aux->sudo[fila][j])
+                if (aux->sudo[fila][i] != aux->sudo[fila][j])
                 {
-                   return 0;
+                   return 1;
                 }
              }
        }
-   return 1;
+   return 0;
 }
 
 int EstaRepetidoC(Node* aux,int col)
@@ -65,13 +65,13 @@ int EstaRepetidoC(Node* aux,int col)
       {
          for (int j = i + 1 ; j < 9 ; j++)
             {
-               if (aux->sudo[i][col] == aux->sudo[j][col])
+               if (aux->sudo[i][col] != aux->sudo[j][col])
                {
-                  return 0;
+                  return 1;
                }
             }
       }
-   return 1;
+   return 0;
 }
 
 int EstaRepetidoS(Node * aux , int filaI, int colI)
@@ -86,17 +86,17 @@ int EstaRepetidoS(Node * aux , int filaI, int colI)
                         {
                            if (k != i || l != j)
                            {
-                              if (aux->sudo[i][j] == 
+                              if (aux->sudo[i][j] != 
                                  aux->sudo[k][l])
                               {
-                                 return 0;
+                                 return 1;
                               }
                            }
                         }
                   }
             }
       }
-   return 1;
+   return 0;
 }
 
 int is_valid(Node* n)
@@ -104,7 +104,7 @@ int is_valid(Node* n)
    int flag = 0;
    for (int i = 0 ; i < 9 ; i++)
    {
-      if (!EstaRepetidoF(n,i))
+      if (EstaRepetidoF(n,i))
       {
          flag = 1;
       }
@@ -114,7 +114,7 @@ int is_valid(Node* n)
    {
       for (int j = 0 ; j < 9 ; j+=3) 
       {
-         if (!EstaRepetidoS(n,i,j))
+         if (EstaRepetidoS(n,i,j))
          {
             flag = 1;
          }
