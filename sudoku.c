@@ -179,7 +179,7 @@ Node* DFS(Node* initial, int* cont)
          Node *primero = first(valoresAdj);
          while (primero != NULL)
             {
-               push(pila,valoresAdj);
+               push(pila,primero);
                primero = next(valoresAdj);
             }
          free(valoresAdj);
