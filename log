@@ -655,3 +655,13 @@ sudoku.c:178:16: error: variable ‘primero’ set but not used [-Werror=unused-
 cc1: all warnings being treated as errors
 Compilation failed
 5e106ef
+Sun 19 May 2024 03:33:03 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:174:22: error: void value not ignored as it ought to be
+  174 |          Node* aux = pop(pila);
+      |                      ^~~
+Compilation failed
+9172a2f
