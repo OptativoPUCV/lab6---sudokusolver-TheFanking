@@ -113,7 +113,7 @@ int is_valid(Node* n)
       {
          for (int j = 0 ; j  < 9 ; j+=3)
             {
-               if (EstaRepetidoS(aux,i,j))
+               if (EstaRepetidoS(n,i,j))
                {
                   return 0;
                }
