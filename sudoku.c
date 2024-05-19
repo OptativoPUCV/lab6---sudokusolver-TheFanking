@@ -101,19 +101,11 @@ int is_valid(Node* n)
          return 0;
       }
    }
-   for (int i = 0 ; i < 9 ; i++)
-      {
-         if (EstaRepetidoC(n,i))
-         {
-            return 0;
-         }
-      }
-
    for (int i = 0 ; i < 9 ; i+=3)
       {
          for (int j = 0 ; j  < 9 ; j+=3)
             {
-               if (!EstaRepetidoS(n,i,j))
+               if (EstaRepetidoS(n,i,j))
                {
                   return 0;
                }
