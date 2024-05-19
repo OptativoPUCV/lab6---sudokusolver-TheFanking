@@ -78,15 +78,15 @@ int EstaRepetidoC(Node* aux,int col)
 
 int EstaRepetidoS(Node * aux , int filaI, int colI)
 {
-   int seen[10] = {0};
+   int valor[10] = {0};
    for (int i = filaI ; i < (filaI + 3) ; i++)
       {
          for (int j = colI ; j < (colI + 3); j++)
             {
                int num = aux->sudo[i][j];
                if (num == 0) continue;
-               if (seen[num]) return 1;
-               seen[num] = 1;
+               if (valor[num]) return 1;
+               valor[num] = 1;
             }
       }
    return 0;
@@ -173,15 +173,11 @@ Node* DFS(Node* initial, int* cont)
       {
          Node* aux = top(pila);
          pop(pila);
-         if (is_final(aux)) return aux;
          (*cont)++;
-         List *valoresAdj = get_adj_nodes(aux);
-         Node *primero = first(valoresAdj);
-         while (primero != NULL)
-            {
-               push(pila,primero);
-               primero = next(valoresAdj);
-            }
+         if (is_final(aux))
+         {
+            
+         }
          free(valoresAdj);
       }
   return NULL;
