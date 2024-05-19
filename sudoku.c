@@ -137,9 +137,12 @@ List* get_adj_nodes(Node* n){
                {
                   for (; k <= 9 ; k++)
                      {
-                        Node *valor = copy(n);
-                        valor->sudo[i][j] = k;
-                        pushBack(list,valor);
+                        if (is_valid(n))
+                        {
+                           Node *valor = copy(n);
+                           valor->sudo[i][j] = k;
+                           pushBack(list,valor);
+                        }
                      }
                }
             }
@@ -162,10 +165,10 @@ int is_final(Node* n){
     return 1;
 }
 
-Node* DFS(Node* initial, int* cont){
+Node* DFS(Node* initial, int* cont)
+{
   return NULL;
 }
-
 
 
 
