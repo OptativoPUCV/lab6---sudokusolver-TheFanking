@@ -79,9 +79,9 @@ int EstaRepetidoC(Node* aux,int col)
 int EstaRepetidoS(Node * aux , int filaI, int colI)
 {
    int seen[10] = {0};
-   for (int i = 0 ; i < (filaI + 3) ; i++)
+   for (int i = filaI ; i < (filaI + 3) ; i++)
       {
-         for (int j = 0 ; j < (colI + 3); j++)
+         for (int j = colI ; j < (colI + 3); j++)
             {
                int num = aux->sudo[i][j];
                if (num == 0) continue;
@@ -109,6 +109,16 @@ int is_valid(Node* n)
          }
       }
 
+   for (int i = 0 ; i < 9 ; i+=3)
+      {
+         for (int j = 0 ; j  < 9 ; j+=3)
+            {
+               if (EstaRepetidoS(n,i,j))
+               {
+                  return 0;
+               }
+            }
+      }
    return 1;
 }   
   
