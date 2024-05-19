@@ -137,10 +137,10 @@ List* get_adj_nodes(Node* n){
                {
                   for (; k <= 9 ; k++)
                      {
-                        if (is_valid(n))
+                        Node *valor = copy(n);
+                        valor->sudo[i][j] = k;
+                        if (is_valid(valor))
                         {
-                           Node *valor = copy(n);
-                           valor->sudo[i][j] = k;
                            pushBack(list,valor);
                         }
                      }
