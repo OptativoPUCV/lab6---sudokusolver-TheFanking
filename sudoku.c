@@ -177,7 +177,7 @@ Node* DFS(Node* initial, int* cont)
          (*cont)++;
          List *valoresAdj = get_adj_nodes(aux);
          Node *primero = first(valoresAdj);
-         while (primero)
+         while (primero != NULL)
             {
                push(pila,valoresAdj);
                primero = next(valoresAdj);
