@@ -173,7 +173,7 @@ Node* DFS(Node* initial, int* cont)
       {
          Node* aux = top(pila);
          pop(pila);
-         if (is_final(aux)) continue;
+         if (is_final(aux)) return aux;
          (*cont)++;
          List *valoresAdj = get_adj_nodes(aux);
          Node *primero = first(valoresAdj);
