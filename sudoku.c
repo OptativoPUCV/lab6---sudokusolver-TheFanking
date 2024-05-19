@@ -85,6 +85,7 @@ int EstaRepetidoS(Node * aux , int filaI, int colI)
                if (aux->sudo[i][j] == 0) continue;
                for (int k = filaI ; k < (filaI+3) ; k++)
                   {
+                     if (aux->sudo[i][j] == 0) continue;
                      for (int l = colI; l < (colI+3) ; l++)
                         {
                            if (k != i || l != j)
