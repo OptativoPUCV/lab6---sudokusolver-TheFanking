@@ -48,7 +48,7 @@ int EstaRepetidoF(Node* aux ,int fila)
 {
     for (int i = 0 ; i < 9 ; i++)
        {
-          for (int j = 1 ; j < 9 ; j++)
+          for (int j = 0 ; j < 9 ; j++)
              {
                 if (aux->sudo[fila][i] == aux->sudo[fila][j])
                 {
@@ -103,18 +103,10 @@ int is_valid(Node* n)
 {
    for (int i = 0 ; i < 9 ; i++)
    {
-      int num[10] = {0};
-      for (int j = 0 ; j < 9 ; j++)
-         {
-            if (n->sudo[i][j] != 0 && num[n->sudo[i][j]] == 1)
-            {
-               return 0;
-            }
-            else
-            {
-               num[n->sudo[i][j]] = 1;
-            }
-         }
+      if (EstaRepetidoF(n,i))
+      {
+         return 0;
+      }
    }
    return 1;
 }   
