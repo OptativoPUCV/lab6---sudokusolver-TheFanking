@@ -171,7 +171,8 @@ Node* DFS(Node* initial, int* cont)
    push(pila,initial);
    while (top(pila) != 0)
       {
-         Node* aux = pop(pila);
+         Node* aux = top(pila);
+         pop(pila);
          if (is_final(aux)) continue;
          (*cont)++;
          List *valoresAdj = get_adj_nodes(aux);
