@@ -641,3 +641,17 @@ Sun 19 May 2024 02:46:24 AM UTC:
  tests:  7|1
 total_score: 55/70
 c9338a3
+Sun 19 May 2024 03:32:39 AM UTC: 
+ sudoku.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:174:22: error: void value not ignored as it ought to be
+  174 |          Node* aux = pop(pila);
+      |                      ^~~
+sudoku.c:178:16: error: variable ‘primero’ set but not used [-Werror=unused-but-set-variable]
+  178 |          Node *primero = first(valoresAdj);
+      |                ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+5e106ef
